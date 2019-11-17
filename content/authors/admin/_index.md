@@ -35,4 +35,4 @@ user_groups:
 - Visitors
 ---
 
-Francisko is planning on using this website for practising his writing (specially in the 3rd person) and data analysis skills. Hopefully someone will find them interesting and/or helpful :)
+Francisko is planning on using this website for practising his writing (specially in the 3rd person) and data analysis skills. He hopes someone will find them interesting and/or helpful :)
