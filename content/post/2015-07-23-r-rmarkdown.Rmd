@@ -35,3 +35,16 @@ pie(
   init.angle = -50, border = NA
 )
 ```
+
+
+# Trying out the proposed exercises
+
+[writing](../writing-technical-content/) ➡️ links to another post
+
+[Write me](../../contact/) ➡️ links to other content (not home page)
+
+[My posts](../../#posts) ➡️ links to other content on home page
+
+[Hmmmmm](../../img/hm.jpg) ➡️ links to a file in your static/ directory
+
+
