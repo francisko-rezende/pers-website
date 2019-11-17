@@ -1,7 +1,7 @@
 ---
 authors:
 - admin
-bio: I am a biologist trying to learn more about nature and to share the little I know.
+bio: I am a biologist trying to learn more about nature and share the little I know.
 education:
   courses:
   - course: MSc in Ecology and Evolutionary Biology
@@ -22,7 +22,7 @@ organizations:
 social:
 - icon: envelope
   icon_pack: fas
-  link: '#contact'
+  link: 'contact/'
 - icon: twitter
   icon_pack: fab
   link: https://twitter.com/francisko_r
