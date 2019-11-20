@@ -19,7 +19,7 @@ projects: []
 
 # So now I'll add a few things here
 
-![Heres a dog](thor_3.jpg)
+![Heres a dog](featured-thor_3.jpg)
 
 # And now some R code
 
