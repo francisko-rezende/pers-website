@@ -30,7 +30,7 @@
 #  weight = 50
 
 [[main]]
-  name = "send me a postcaRd..."
+  name = "Send me a postcard..."
   url = "contact/"
   weight = 60
 
