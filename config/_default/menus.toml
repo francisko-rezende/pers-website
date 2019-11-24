@@ -38,4 +38,5 @@
 [[main]]
     name = "CV"
     url = "https://francisko-rezende.github.io/cv/"
+#    url = "cv/"
     weight = 70
