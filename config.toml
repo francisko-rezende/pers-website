@@ -5,7 +5,7 @@
 # Each configuration section is defined by a name in square brackets (e.g. `[outputs]`).
 
 # Title of your site
-title = "Where your rump rests"
+title = "wheRe youR Rump Rests"
 
 # The URL of your site.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
@@ -66,3 +66,9 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
   category = "categories"
   publication_type = "publication_types"
   author = "authors"
+
+[permalinks]
+# for optimists who plan to blog a lot
+#    post = "/post/:year/:month/:day/:slug/" 
+# for realists who know that you won't have multiple posts per day (or maybe even month)
+    post = "/post/:year/:month/:slug/" 

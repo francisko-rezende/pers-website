@@ -10,13 +10,14 @@
 
 [[main]]
   name = "Blog"
-  url = "#posts"
+  url = "/post"
   weight = 20
 
-[[main]]
-  name = "R Rambles"
-  url = "#projects"
-  weight = 30
+#[[main]]
+#  name = "R Rambles"
+#  pre = "fa-r-project"
+#  url = "/projects"
+#  weight = 30
 
 #[[main]]
 #  name = "Publications"
@@ -29,7 +30,7 @@
 #  weight = 50
 
 [[main]]
-  name = "Drop me a line"
+  name = "send me a postcaRd..."
   url = "contact/"
   weight = 60
 

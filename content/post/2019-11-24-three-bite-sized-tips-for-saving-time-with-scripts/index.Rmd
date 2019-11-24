@@ -1,0 +1,57 @@
+---
+title: Three Bite-Sized Tips for Saving Time with Scripts
+author: Francisko de Moraes Rezende
+date: '2019-11-24'
+slug: three-bite-sized-tips-for-saving-time-with-scripts
+categories:
+  - programming
+tags:
+  - bash
+  - R
+  - automation
+  - scripting
+subtitle: ''
+summary: 'You can use scripts to automate repetitive tasks in your workflow, saving time, your keyboard, and some of your sanity.'
+authors: []
+lastmod: '2019-11-24T13:38:40+02:00'
+featured: no
+image:
+  caption: 'Image from the series Flight of the Conchords. SOng: "Robots" (also known as "Humans Are Dead").'
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+<!-- ![Image from the song "Robots" (also known as Humans Are Dead). Series: Flight of the Conchords](featured.jpg) -->
+
+## Scripting, or how to make your computer take care of the boring stuff while you focus on what really matters: ~~napping~~ content
+
+Producing content can be hard regardless of wheter you're working on a manuscript, a blog post or on a data analysis project.
+This process involves coming up with your content---which is tough on its own---and a whole bunch of repetitive tasks that are important to your end-product and to future-you.
+The latter consume your time, your focus, and increase the amount of typing you have to do.
+Fortunately, you can leave a good portion of these repetitive tasks to someone that doesn't really mind repetition and happens to be quite good at it: your computer.
+All you have to do give it some instructions and that's what you'll find in this post.
+
+```{r echo = FALSE, fig.cap="This doesn't have to be you. Unless you happen to be a cat who likes typing. Even so, it's your call."}
+knitr::include_graphics("cat_typing.gif")
+```
+
+
+### Application #1: Creating a folder structure using bash
+
+
+The first step in every project is to give it a home in your computer. Creating an informative folder structure makes organizing your files a no-brainer, which is great! It's also completely mechanical process so let's put our computer in charge of doing that for us. We can do it using bash.
+
+```{bash, eval=FALSE}
+mkdir data data/raw_data data/tidy_data
+
+mkdir code code/raw_code code/final_code
+
+mkdir figures figures/exploratory figures/explanatory
+
+mkdir products products/writing
+```
+
+
+
