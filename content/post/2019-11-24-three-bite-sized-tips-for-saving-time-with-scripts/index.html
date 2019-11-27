@@ -1,8 +1,8 @@
 ---
-title: Three Bite-Sized Tips for Saving Time with Scripts
+title: Bash for Beginners or How to Automate Folder Creation
 author: Francisko de Moraes Rezende
 date: '2019-11-24'
-slug: three-bite-sized-tips-for-saving-time-with-scripts
+slug: bash-for-beginners-or-how-to-automate-folder-creation
 categories:
   - programming
 tags:
@@ -11,12 +11,12 @@ tags:
   - automation
   - scripting
 subtitle: ''
-summary: 'You can use scripts to automate repetitive tasks in your workflow, saving time, your keyboard, and some of your sanity.'
+summary: 'You can use scripts to automate repetitive tasks in your workflow, saving time, your keyboard, and some of your sanity OR scripts for beginners'
 authors: []
 lastmod: '2019-11-24T13:38:40+02:00'
 featured: no
 image:
-  caption: 'Image from the series Flight of the Conchords. SOng: "Robots" (also known as "Humans Are Dead").'
+  caption: 'Image from the series Flight of the Conchords. Song: "Robots" (also known as "Humans Are Dead"). You know, because we are automating stuff?'
   focal_point: ''
   preview_only: no
 projects: []
@@ -24,29 +24,157 @@ projects: []
 
 
 
-<!-- ![Image from the song "Robots" (also known as Humans Are Dead). Series: Flight of the Conchords](featured.jpg) -->
 <div id="scripting-or-how-to-make-your-computer-take-care-of-the-boring-stuff-while-you-focus-on-what-really-matters-napping-content" class="section level2">
 <h2>Scripting, or how to make your computer take care of the boring stuff while you focus on what really matters: <del>napping</del> content</h2>
-<p>Producing content can be hard regardless of wheter you’re working on a manuscript, a blog post or on a data analysis project.
+<p>Producing content can be hard regardless of whether you’re working on a manuscript, a blog post or on a data analysis project.
 This process involves coming up with your content—which is tough on its own—and a whole bunch of repetitive tasks that are important to your end-product and to future-you.
-The latter consume your time, your focus, and increase the amount of typing you have to do.
-Fortunately, you can leave a good portion of these repetitive tasks to someone that doesn’t really mind repetition and happens to be quite good at it: your computer.
-All you have to do give it some instructions and that’s what you’ll find in this post.</p>
+These repetitive tasks consume your time, your focus, and increase the amount of typing you have to do.
+Fortunately, you can leave a good portion them to someone that doesn’t really mind repetition and happens to be quite good at it: your computer.
+All you have to do give it some instructions and that’s what you’ll find here.
+In this post we’ll use Bash scripting to easily create folders for our projects.
+Oh, and we’ll do it using RStudio.</p>
 <div class="figure"><span id="fig:unnamed-chunk-1"></span>
 <img src="cat_typing.gif" alt="This doesn't have to be you. Unless you happen to be a cat who likes typing. Even so, it's your call."  />
 <p class="caption">
 Figure 1: This doesn’t have to be you. Unless you happen to be a cat who likes typing. Even so, it’s your call.
 </p>
 </div>
-<div id="application-1-creating-a-folder-structure-using-bash" class="section level3">
-<h3>Application #1: Creating a folder structure using bash</h3>
-<p>The first step in every project is to give it a home in your computer. Creating an informative folder structure makes organizing your files a no-brainer, which is great! It’s also completely mechanical process so let’s put our computer in charge of doing that for us. We can do it using bash.</p>
-<pre class="bash"><code>mkdir data data/raw_data data/tidy_data
-
-mkdir code code/raw_code code/final_code
-
-mkdir figures figures/exploratory figures/explanatory
-
-mkdir products products/writing</code></pre>
+<div id="why-rstudio" class="section level3">
+<h3>Why RStudio?</h3>
+<p>Because RStudio offers an easy and platform-agnostic way of creating and executing Bash scripts.
+Also, in case you’re already using RStudio for your project you won’t have to swap apps, which is more comfortable, right? :smiley:</p>
+<p>In case you don’t have RStudio installed in your computer you can either find instructions on how to do so <a href="https://rstudio.com/">here</a> or use <a href="https://rstudio.cloud/">Rstudio’s cloud service</a>—kind of like Google Apps for Work (G Suite) but for RStudio.</p>
+<p>I’ll use RStudio cloud in case you were wondering.</p>
+<!-- ![Tutorials sometimes feel like this when we assume](how_to_draw_an_owl.jpg) -->
 </div>
+<div id="creating-a-folder-structure-using-bash" class="section level3">
+<h3>Creating a folder structure using bash</h3>
+<p>The first step in every project is to give it a home.
+Creating an informative folder structure makes organizing your files a no-brainer, which is great!
+It’s also a completely mechanical process so let’s put our computers in charge of doing that for us.
+We can do it using Bash in a few easy steps.</p>
+<div id="choose-the-a-folder-structure-you-like." class="section level4">
+<h4>1 — Choose the a folder structure you like.</h4>
+<p>I personally use (and like) the folder structure suggested by the instructors of the awesome <a href="https://leanpub.com/universities/set/jhu/cloud-based-data-science">Cloud Based Data Science</a> course set, so that’s the structure we’ll create in this example.
+By the way, in case you’d like to learn more about Data Science, R, Git and friends check their courses out! They are amazing!</p>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="folder_str.png" alt="The folder structure we'll create in this example. Image from the _Cloud Based Data Science_ course set, specifically from the _Organizing Data Science Projects_ course." width="480" />
+<p class="caption">
+Figure 2: The folder structure we’ll create in this example. Image from the <em>Cloud Based Data Science</em> course set, specifically from the <em>Organizing Data Science Projects</em> course.
+</p>
+</div>
+</div>
+<div id="create-your-script" class="section level4">
+<h4>2 — Create your script</h4>
+<p>A script is a set of instructions for computers.
+There’s a catch to using scripts though: computers are a bit like Drax the Destroyer from the the first Guardians of the Galaxy movie in the sense that they take things literally.</p>
+<p><img src="drax-over_my_head.gif" /><!-- --></p>
+<p>So, stealing the example I heard from my friend<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+<a href="https://twitter.com/bob_solar">Bob</a>, if your computer could do your groceries for you and you told it:</p>
+<blockquote>
+<p>Go to the shop and buy bread, please. Oh, and if they have eggs bring me six.</p>
+</blockquote>
+<p>You’d end up with something like this:</p>
+<p><img src="six_bread.jpeg" width="1688" /></p>
+<p>That being said let’s jump to the actual scripting!</p>
+<p>We’ll create our script using a command language called Bash.
+It is widely used in Linux and macOS distributions and can be used to manipulate data, move/rename files, and create folders (which is what we’ll do here), for example.</p>
+<p>Bash scripts are plain text files and creating them in RStudio(cloud) is quite easy. All we have to do it click “File &gt; New File &gt; Text File” and <em>voilà</em>.</p>
+<p><img src="text_file_creation.gif" /><!-- --></p>
+<p>Now we’ll write the actual instructions for our computers.
+We’ll only use one command: <code>mkdir</code>. This command makes directories (as you might have guessed by its name).
+To create directories using this command, you type <code>mkdir</code> and follow it by the folder name.
+For instance, typing <code>mkdir cat-pics</code> creates a folder called “cat-pics”.
+We can create the folder structure from figure 2 by using the following commands:</p>
+<pre class="bash"><code>## Creating &quot;data&quot; and its subfolders
+
+mkdir data # creates a folder called &quot;data&quot;
+
+mkdir data/raw_data # creates a folder called &quot;raw_data&quot; within &quot;data&quot;
+
+mkdir data/tidy_data # creates a folder called &quot;tidy_data&quot; within &quot;data&quot;
+
+## Creating &quot;code&quot; and its subfolders
+
+mkdir code # creates a folder called &quot;code&quot;
+
+mkdir code/raw_code # creates a folder called &quot;raw_code&quot; within &quot;code&quot;
+
+mkdir code/final_code # creates a folder called &quot;final_code&quot; within &quot;code&quot;
+
+## Creating &quot;figures&quot; and its subfolders
+
+mkdir figures # creates a folder called &quot;figures&quot;
+
+mkdir figures/exploratory # creates a folder called &quot;exploratory&quot; within &quot;figures&quot;
+
+mkdir figures/explanatory # creates a folder called &quot;explanatory&quot; within &quot;figures&quot;
+
+## Creating &quot;products&quot; and its subfolders
+
+mkdir products # creates a folder called &quot;products&quot;
+
+mkdir products/writing # creates a folder called &quot;writing&quot; within products</code></pre>
+<p>I know this seems lengthy but hey, once you’ve typed it you can make your computer execute the whole script with a single command.
+That’s the awesome part of using scripts for repetitive tasks.
+Also, the script above could be shorter.
+It’s possible to create multiple folders with a single <code>mkdir</code> call, for example.
+I decided to make the script a little longer by having a single command/action per line because I think it makes it more understandable and it’s easier add comments explaining what each line does.</p>
+<p>Once we finish writing our script, we’ll save it with the <code>.sh</code> extension.
+To do this in RStudio we just click “save”, and give the name we want to our script followed by <code>.sh</code>.
+I decided to name our script <code>folders.sh</code>.
+This specific script creates the folder structure we chose in the same directory as the script file is located.
+Since we’re using the script to create a folder structure for our new projects, we’ll save it in our project’s main folder.</p>
+<p><img src="saved_script.png" width="713" /></p>
+</div>
+<div id="executing-our-script" class="section level4">
+<h4>3 — Executing our script</h4>
+<p>Now that we have all the pieces we need to create our folder structure all we have to do is ask our computers to follow our instructions.
+We do that using the terminal, also known as the command line.
+There are different terminal applications out there so feel free to pick the one you like better.
+I’ll use RStudio’s terminal.
+To access RStudio terminal all you have to to is click the “Terminal” tab located next to the console.
+When you switch to terminal, the usual <code>&gt;</code> from RStudio’s console turns into a <code>$</code>.</p>
+<div class="figure"><span id="fig:unnamed-chunk-8"></span>
+<img src="terminal_circle.png" alt="RStudio's terminal window." width="717" />
+<p class="caption">
+Figure 3: RStudio’s terminal window.
+</p>
+</div>
+<p>Now that we’ve opened the terminal we’ll figure out where are we.
+To do that we’ll use <code>pwd</code>, a command that prints the current working directory.</p>
+<p>Regardless of where we are, we want to get to the same place we saved our script.
+If you’re using RStudio cloud or an RStudio project you should already be in the right place.
+You can also use <code>ls</code> to show/list the contents of your current folder to make sure you are on the right place.</p>
+<div class="figure"><span id="fig:unnamed-chunk-9"></span>
+<img src="folder_checking.png" alt="The orange arrows show that the output of _pwd_ matches the project's main folder. The red arrow shows that our script (folders.sh) is among  the output of _ls_" width="718" />
+<p class="caption">
+Figure 4: The orange arrows show that the output of <em>pwd</em> matches the project’s main folder. The red arrow shows that our script (folders.sh) is among the output of <em>ls</em>
+</p>
+</div>
+<p>In case you’re on a different folder, you should navigate to your project’s main folder.
+To do so you can use <code>cd</code> followed by a space and a directory name to move to a given directory.
+In case you need to go back/a level up you can use <code>cd</code> followed by <code>..</code>.
+While you’re navigating your folders you might want <code>ls</code> to see which files/folders the directory you’re currently at contains.</p>
+<p>But assuming we’re all where we want to be—our projects’s main folder—how do we execute our script?
+We type <code>bash folders.sh</code> in RStudio’s terminal and see the magic happening:</p>
+<div class="figure"><span id="fig:unnamed-chunk-10"></span>
+<img src="exe.gif" alt="Execute the script and enjoy your new folders."  />
+<p class="caption">
+Figure 5: Execute the script and enjoy your new folders.
+</p>
+</div>
+<p>And we’re done! Now when you want to start a new project you can copy your folder-creation script to your new project’s folder, execute and your good to go!</p>
+<p>In case you want to learn more about using the command line, including scripts check out <a href="https://librarycarpentry.org/lc-shell/">this carpentry library</a>.</p>
+<p>Any feedback is highly appreciated, just drop me a line using this website’s contact form :smiley:</p>
+<p>Cheers and thanks for reading,</p>
+<p>F</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Bob, even though we haven’t talked in a while I still think you’re awesome!<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>

@@ -35,4 +35,6 @@ user_groups:
 - Visitors
 ---
 
+This website only exists because of [Alison Hill](https://alison.rbind.io/) and her tutorial [Summer of Blogdown](https://summer-of-blogdown.netlify.com/). All the good stuff you find here is likely due to her :)
+
 Francisko is planning on using this website for practising his writing (specially in the 3rd person) and data analysis skills. He hopes someone will find them interesting and/or helpful :)
