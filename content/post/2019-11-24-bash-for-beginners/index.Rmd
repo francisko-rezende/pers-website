@@ -49,7 +49,7 @@ I'll use RStudio cloud in case you were wondering.
 <!-- ![Tutorials sometimes feel like this when we assume](how_to_draw_an_owl.jpg) -->
 
 
-### Creating a folder structure using bash
+### Creating a folder structure using Bash
 
 
 The first step in every project is to give it a home.
@@ -150,7 +150,7 @@ I decided to name our script `folders.sh`.
 This specific script creates the folder structure we chose in the same directory as the script file is located. 
 Since we're using the script to create a folder structure for our new projects, we'll save it in our project's main folder.
 
-```{r echo = FALSE, fig.cap=""}
+```{r echo = FALSE, fig.cap="As you can see, our script is in our project's main folder."}
 knitr::include_graphics("saved_script.png")
 ```
 
@@ -192,7 +192,7 @@ We type `bash folders.sh` in RStudio's terminal and see the magic happening:
 knitr::include_graphics("exe.gif")
 ```
 
-And we're done! Now when you want to start a new project you can copy your folder-creation script to your new project's folder, execute and your good to go!
+And we're done! Now when you want to start a new project you can copy your folder-creation script to your new project's folder, execute and you're good to go!
 
 In case you want to learn more about using the command line, including scripts check out [this carpentry library](https://librarycarpentry.org/lc-shell/).
 

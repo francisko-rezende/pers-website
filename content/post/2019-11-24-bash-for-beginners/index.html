@@ -48,7 +48,7 @@ Also, in case you’re already using RStudio for your project you won’t have t
 <!-- ![Tutorials sometimes feel like this when we assume](how_to_draw_an_owl.jpg) -->
 </div>
 <div id="creating-a-folder-structure-using-bash" class="section level3">
-<h3>Creating a folder structure using bash</h3>
+<h3>Creating a folder structure using Bash</h3>
 <p>The first step in every project is to give it a home.
 Creating an informative folder structure makes organizing your files a no-brainer, which is great!
 It’s also a completely mechanical process so let’s put our computers in charge of doing that for us.
@@ -125,7 +125,12 @@ To do this in RStudio we just click “save”, and give the name we want to our
 I decided to name our script <code>folders.sh</code>.
 This specific script creates the folder structure we chose in the same directory as the script file is located.
 Since we’re using the script to create a folder structure for our new projects, we’ll save it in our project’s main folder.</p>
-<p><img src="saved_script.png" width="713" /></p>
+<div class="figure"><span id="fig:unnamed-chunk-7"></span>
+<img src="saved_script.png" alt="As you can see, our script is in our project's main folder." width="713" />
+<p class="caption">
+Figure 3: As you can see, our script is in our project’s main folder.
+</p>
+</div>
 </div>
 <div id="executing-our-script" class="section level4">
 <h4>3 — Executing our script</h4>
@@ -138,7 +143,7 @@ When you switch to terminal, the usual <code>&gt;</code> from RStudio’s consol
 <div class="figure"><span id="fig:unnamed-chunk-8"></span>
 <img src="terminal_circle.png" alt="RStudio's terminal window." width="717" />
 <p class="caption">
-Figure 3: RStudio’s terminal window.
+Figure 4: RStudio’s terminal window.
 </p>
 </div>
 <p>Now that we’ve opened the terminal we’ll figure out where are we.
@@ -149,7 +154,7 @@ You can also use <code>ls</code> to show/list the contents of your current folde
 <div class="figure"><span id="fig:unnamed-chunk-9"></span>
 <img src="folder_checking.png" alt="The orange arrows show that the output of _pwd_ matches the project's main folder. The red arrow shows that our script (folders.sh) is among  the output of _ls_" width="718" />
 <p class="caption">
-Figure 4: The orange arrows show that the output of <em>pwd</em> matches the project’s main folder. The red arrow shows that our script (folders.sh) is among the output of <em>ls</em>
+Figure 5: The orange arrows show that the output of <em>pwd</em> matches the project’s main folder. The red arrow shows that our script (folders.sh) is among the output of <em>ls</em>
 </p>
 </div>
 <p>In case you’re on a different folder, you should navigate to your project’s main folder.
@@ -161,10 +166,10 @@ We type <code>bash folders.sh</code> in RStudio’s terminal and see the magic h
 <div class="figure"><span id="fig:unnamed-chunk-10"></span>
 <img src="exe.gif" alt="Execute the script and enjoy your new folders."  />
 <p class="caption">
-Figure 5: Execute the script and enjoy your new folders.
+Figure 6: Execute the script and enjoy your new folders.
 </p>
 </div>
-<p>And we’re done! Now when you want to start a new project you can copy your folder-creation script to your new project’s folder, execute and your good to go!</p>
+<p>And we’re done! Now when you want to start a new project you can copy your folder-creation script to your new project’s folder, execute and you’re good to go!</p>
 <p>In case you want to learn more about using the command line, including scripts check out <a href="https://librarycarpentry.org/lc-shell/">this carpentry library</a>.</p>
 <p>Any feedback is highly appreciated, just drop me a line using this website’s contact form :smiley:</p>
 <p>Cheers and thanks for reading,</p>
